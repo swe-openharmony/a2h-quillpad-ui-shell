@@ -328,7 +328,8 @@ export struct SettingsPage {
         }
         .key('settings_choice_' + c.label)
         .width('100%').height(56).alignItems(VerticalAlign.Center)
-        .onClick(() => onPick(c.label))
+        // Picker choices are inert UI-shell affordances: close only.
+        .onClick(() => this.go('settings_main_top'))
       }, (c: ChoiceItem) => c.label)
     }
     .width('100%')
@@ -367,128 +368,92 @@ export struct SettingsPage {
 
       if (this.state === 'settings_theme_choice') {
         DialogCard({ title: 'Theme mode', onDismiss: () => this.go('settings_main_top'),
-          body: () => { this.choiceBody(this.themeChoices(), (l: string) => {
-            this.app().setPref('themeMode', l);
-          }) },
+          body: () => { this.choiceBody(this.themeChoices(), (_l: string) => {}) },
           actions: () => { this.doneAction() } })
       }
       if (this.state === 'settings_dark_theme_choice') {
         DialogCard({ title: 'Dark theme mode', onDismiss: () => this.go('settings_main_top'),
-          body: () => { this.choiceBody(this.darkChoices(), (l: string) => {
-            this.app().setPref('darkThemeMode', l === 'Black' ? 'black' : 'standard');
-          }) },
+          body: () => { this.choiceBody(this.darkChoices(), (_l: string) => {}) },
           actions: () => { this.doneAction() } })
       }
       if (this.state === 'settings_color_scheme') {
         DialogCard({ title: 'Color scheme', onDismiss: () => this.go('settings_main_top'),
-          body: () => { this.choiceBody(this.colorChoices(), (l: string) => {
-            this.app().setPref('colorScheme', l);
-          }) },
+          body: () => { this.choiceBody(this.colorChoices(), (_l: string) => {}) },
           actions: () => { this.doneAction() } })
       }
       if (this.state === 'settings_layout_choice') {
         DialogCard({ title: 'Layout mode', onDismiss: () => this.go('settings_main_top'),
-          body: () => { this.choiceBody(this.layoutChoices(), (l: string) => {
-            this.app().setPref('layoutMode', l === 'List' ? 'list' : 'grid');
-          }) },
+          body: () => { this.choiceBody(this.layoutChoices(), (_l: string) => {}) },
           actions: () => { this.doneAction() } })
       }
       if (this.state === 'settings_sort_choice') {
         DialogCard({ title: 'Sort by', onDismiss: () => this.go('settings_main_top'),
-          body: () => { this.choiceBody(this.sortChoices(), (l: string) => {
-            this.applySortChoice(l, 'sortBy', 'sortDir');
-          }) },
+          body: () => { this.choiceBody(this.sortChoices(), (_l: string) => {}) },
           actions: () => { this.doneAction() } })
       }
       if (this.state === 'settings_tag_sort_choice') {
         DialogCard({ title: 'Tag list sort', onDismiss: () => this.go('settings_main_top'),
-          body: () => { this.choiceBody(this.tagSortChoices(), (l: string) => {
-            this.applySortChoice(l, 'tagSortBy', 'tagSortDir');
-          }) },
+          body: () => { this.choiceBody(this.tagSortChoices(), (_l: string) => {}) },
           actions: () => { this.doneAction() } })
       }
       if (this.state === 'settings_notebook_sort_choice') {
         DialogCard({ title: 'Notebook list sort', onDismiss: () => this.go('settings_main_top'),
-          body: () => { this.choiceBody(this.notebookSortChoices(), (l: string) => {
-            this.applySortChoice(l, 'notebookSortBy', 'notebookSortDir');
-          }) },
+          body: () => { this.choiceBody(this.notebookSortChoices(), (_l: string) => {}) },
           actions: () => { this.doneAction() } })
       }
       if (this.state === 'settings_font_size_choice') {
         DialogCard({ title: 'Text editor/view font size', onDismiss: () => this.go('settings_main_top'),
-          body: () => { this.choiceBody(this.fontSizeChoices(), (l: string) => {
-            this.app().setPref('fontSize', l);
-          }) },
+          body: () => { this.choiceBody(this.fontSizeChoices(), (_l: string) => {}) },
           actions: () => { this.doneAction() } })
       }
       if (this.state === 'settings_button_position_choice') {
         DialogCard({ title: 'Edit/View note button position', onDismiss: () => this.go('settings_main_top'),
-          body: () => { this.choiceBody(this.buttonPositionChoices(), (l: string) => {
-            this.app().setPref('buttonPosition', l === 'Top bar' ? 'topbar' : 'floating');
-          }) },
+          body: () => { this.choiceBody(this.buttonPositionChoices(), (_l: string) => {}) },
           actions: () => { this.doneAction() } })
       }
       if (this.state === 'settings_default_editor_choice') {
         DialogCard({ title: 'Default editor mode', onDismiss: () => this.go('settings_main_top'),
-          body: () => { this.choiceBody(this.editorModeChoices(), (l: string) => {
-            this.app().setPref('defaultEditorMode', l === 'Edit mode' ? 'edit' : 'view');
-          }) },
+          body: () => { this.choiceBody(this.editorModeChoices(), (_l: string) => {}) },
           actions: () => { this.doneAction() } })
       }
       if (this.state === 'settings_show_date_choice') {
         DialogCard({ title: 'Show date created/modified', onDismiss: () => this.go('settings_main_top'),
-          body: () => { this.choiceBody(this.yesNoChoices(this.prefs().showDate), (l: string) => {
-            this.app().setPref('showDate', l);
-          }) },
+          body: () => { this.choiceBody(this.yesNoChoices(this.prefs().showDate), (_l: string) => {}) },
           actions: () => { this.doneAction() } })
       }
       if (this.state === 'settings_date_format_choice') {
         DialogCard({ title: 'Date format', onDismiss: () => this.go('settings_main_top'),
-          body: () => { this.choiceBody(this.dateFormatChoices(), (l: string) => {
-            this.app().setPref('dateFormat', l);
-          }) },
+          body: () => { this.choiceBody(this.dateFormatChoices(), (_l: string) => {}) },
           actions: () => { this.doneAction() } })
       }
       if (this.state === 'settings_time_format_choice') {
         DialogCard({ title: 'Time format', onDismiss: () => this.go('settings_main_top'),
-          body: () => { this.choiceBody(this.timeFormatChoices(), (l: string) => {
-            this.app().setPref('timeFormat', l);
-          }) },
+          body: () => { this.choiceBody(this.timeFormatChoices(), (_l: string) => {}) },
           actions: () => { this.doneAction() } })
       }
       if (this.state === 'settings_group_no_notebook_choice') {
         DialogCard({ title: 'Group notes without a notebook', onDismiss: () => this.go('settings_main_top'),
-          body: () => { this.choiceBody(this.yesNoChoices(this.prefs().groupNoNotebook), (l: string) => {
-            this.app().setPref('groupNoNotebook', l);
-          }) },
+          body: () => { this.choiceBody(this.yesNoChoices(this.prefs().groupNoNotebook), (_l: string) => {}) },
           actions: () => { this.doneAction() } })
       }
       if (this.state === 'settings_move_checked_choice') {
         DialogCard({ title: 'Move (un)checked items in the lists', onDismiss: () => this.go('settings_main_top'),
-          body: () => { this.choiceBody(this.yesNoChoices(this.prefs().moveChecked), (l: string) => {
-            this.app().setPref('moveChecked', l);
-          }) },
+          body: () => { this.choiceBody(this.yesNoChoices(this.prefs().moveChecked), (_l: string) => {}) },
           actions: () => { this.doneAction() } })
       }
       if (this.state === 'settings_open_media_choice') {
         DialogCard({ title: 'Open media in', onDismiss: () => this.go('settings_main_top'),
-          body: () => { this.choiceBody(this.openMediaChoices(), (l: string) => {
-            this.app().setPref('openMedia', l);
-          }) },
+          body: () => { this.choiceBody(this.openMediaChoices(), (_l: string) => {}) },
           actions: () => { this.doneAction() } })
       }
       if (this.state === 'settings_deletion_time_choice') {
         DialogCard({ title: 'Delete notes in bin', onDismiss: () => this.go('settings_main_top'),
-          body: () => { this.choiceBody(this.deletionTimeChoices(), (l: string) => {
-            this.app().setPref('deletionTime', l);
-          }) },
+          body: () => { this.choiceBody(this.deletionTimeChoices(), (_l: string) => {}) },
           actions: () => { this.doneAction() } })
       }
       if (this.state === 'settings_backup_strategy_choice') {
         DialogCard({ title: 'Backup strategy for attachments', onDismiss: () => this.go('settings_main_top'),
-          body: () => { this.choiceBody(this.backupStrategyChoices(), (l: string) => {
-            this.app().setPref('backupStrategy', l);
-          }) },
+          body: () => { this.choiceBody(this.backupStrategyChoices(), (_l: string) => {}) },
           actions: () => { this.doneAction() } })
       }
     }
@@ -496,15 +461,4 @@ export struct SettingsPage {
     .backgroundColor(Style.bg)
   }
 
-  private applySortChoice(label: string, sortKeyPref: string, sortDirPref: string): void {
-    // Map label back to (key, dir) and persist.
-    if (label.indexOf('Title') === 0) {
-      this.app().setPref(sortKeyPref, 'title');
-    } else if (label.indexOf('Date created') === 0) {
-      this.app().setPref(sortKeyPref, 'created');
-    } else {
-      this.app().setPref(sortKeyPref, 'modified');
-    }
-    this.app().setPref(sortDirPref, label.indexOf('ascending') > 0 ? 'asc' : 'desc');
-  }
 }

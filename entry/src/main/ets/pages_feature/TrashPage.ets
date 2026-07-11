@@ -28,8 +28,10 @@ export struct TrashPage {
   go: (route: string) => void = () => {};
 
   @StorageLink('qp_notes_version') notesVersion: number = 0;
-  @StorageLink('qp_selected') selectedCountMirror: number = 0;
-  @StorageLink('qp_prefs') prefsSig: string = '';
+  // UI-shell-only presentation state; actions never alter the seeded bin.
+  @State private selectedCount: number = 0;
+  @State private showHidden: boolean = false;
+  @State private hiddenNoteId: number = -1;
   @State private contextNoteId: number = 8;
 
   private app(): AppState { return AppState.getInstance(); }
@@ -40,8 +42,7 @@ export struct TrashPage {
 
   private notesList(): Note[] {
     return this.app().trashedNotes().filter((n: Note) => {
-      if (n.hidden === true && !this.app().showHidden) return false;
-      return true;
+      return this.showHidden || n.id !== this.hiddenNoteId;
     });
   }
 
@@ -58,7 +59,7 @@ export struct TrashPage {
 
   private overflowRows(): MenuRow[] {
     return [
-      { label: 'Show hidden notes', trailing: 'checkbox', checked: this.app().showHidden },
+      { label: 'Show hidden notes', trailing: 'checkbox', checked: this.showHidden },
       { label: 'Select All' },
       { label: 'Empty bin' },
     ];
@@ -69,55 +70,25 @@ export struct TrashPage {
   }
 
   private selectAllVisible(): void {
-    const ids: number[] = this.notesList().map((n: Note) => n.id);
-    this.app().selectAllVisible(ids);
-    this.app().bumpVersion();
+    this.selectedCount = this.notesList().length;
   }
 
   private handleOverflow(label: string): void {
-    if (label === 'Show hidden notes') {
-      this.app().showHidden = !this.app().showHidden;
-      this.app().bumpVersion();
-      this.go('trash_populated');
-      return;
-    }
-    if (label === 'Select All') {
-      this.selectAllVisible();
-      this.go('trash_selection');
-      return;
-    }
     if (label === 'Empty bin') {
       this.go('trash_empty_bin_confirm');
       return;
     }
+    if (label === 'Show hidden notes') this.showHidden = !this.showHidden;
+    if (label === 'Select All') this.selectAllVisible();
+    this.go(this.selectedCount > 0 ? 'trash_selection' : 'trash_populated');
   }
 
   private handleContext(label: string): void {
-    const id: number = this.contextNoteId;
-    if (label === 'Restore') {
-      this.app().selectedIds = [id];
-      this.notify(this.app().restoreSelected());
-      this.go('trash_populated');
-      return;
-    }
-    if (label === 'Delete permanently') {
-      this.app().selectedIds = [id];
-      this.notify(this.app().deleteSelectedPermanently());
-      this.go('trash_populated');
-      return;
-    }
-    if (label === 'Show / Hide') {
-      this.app().toggleHidden(id);
-      this.go('trash_populated');
-      return;
-    }
-    if (label === 'Select more…') {
-      this.app().selectedIds = [id];
-      this.app().bumpVersion();
-      this.go('trash_selection');
-      return;
-    }
-    this.go('trash_populated');
+    // Restore/delete are inert shell affordances. Only Hide changes what this
+    // page renders, and even that state is discarded with the page instance.
+    if (label === 'Show / Hide') this.hiddenNoteId = this.contextNoteId;
+    if (label === 'Select more…') this.selectedCount = 1;
+    this.go(this.selectedCount > 0 ? 'trash_selection' : 'trash_populated');
   }
 
   private trashListNote(note: Note): Note {
@@ -142,7 +113,7 @@ export struct TrashPage {
 
   @Builder selectionToolbar() {
     TopBar({ leading: $r('app.media.ic_back'), title: 'Selected ' + this.selectedTitleSuffix(),
-      onLeading: () => { this.app().clearSelection(); this.go('trash_populated'); } }) {
+      onLeading: () => { this.selectedCount = 0; this.go('trash_populated'); } }) {
       IconButton({ icon: $r('app.media.ic_select_more'), keyId: 'toolbar_more', onTap: () => this.go('trash_overflow') })
     }
   }
@@ -156,7 +127,7 @@ export struct TrashPage {
   }
 
   private selectedTitleSuffix(): string {
-    const n: number = this.selectedCountMirror;
+    const n: number = this.selectedCount;
     return n + (n === 1 ? ' note' : ' notes');
   }
 
@@ -194,7 +165,7 @@ export struct TrashPage {
             NoteCard({
               note: this.trashListNote(n),
               forceColorFill: true,
-              selected: this.app().isSelected(n.id),
+              selected: this.selectedCount > 0,
               onTap: () => {
                 this.contextNoteId = n.id;
                 this.go('trash_view_only');
@@ -242,8 +213,6 @@ export struct TrashPage {
           .layoutWeight(1)
           .justifyContent(FlexAlign.Center)
           IconButton({ icon: $r('app.media.ic_restore'), tint: Style.textPrimary, onTap: () => {
-            this.app().selectedIds = [this.contextNoteId];
-            this.notify(this.app().restoreSelected());
             this.go('trash_populated');
           } })
           this.overflowButton(() => this.go('trash_context'))
@@ -280,8 +249,6 @@ export struct TrashPage {
           .fontSize(16).fontColor(Style.accent).fontWeight(FontWeight.Medium)
           .margin({ left: 16 })
           .onClick(() => {
-            this.app().selectedIds = [this.contextNoteId];
-            this.notify(this.app().restoreSelected());
             this.go('trash_populated');
           })
       }
@@ -327,11 +294,7 @@ export struct TrashPage {
       .padding({ left: 16, right: 16, top: 8, bottom: 8 })
       .margin({ left: 8 })
       .key('dialog_yes')
-      .onClick(() => {
-        this.app().emptyBin();
-        this.notify('Bin emptied');
-        this.go('trash_populated');
-      })
+      .onClick(() => this.go('trash_populated'))
   }
 
   build() {
@@ -340,7 +303,7 @@ export struct TrashPage {
         this.viewOnly()
       } else {
         Column() {
-          if (this.selectedCountMirror > 0) {
+          if (this.selectedCount > 0) {
             this.selectionToolbar()
           } else {
             this.normalToolbar()
@@ -358,7 +321,7 @@ export struct TrashPage {
         if (this.state === 'trash_overflow') {
           PopupMenu({ rows: this.overflowRows(), top: 0, menuWidthPct: 72, rowHeight: 60,
             onPick: (index: number) => this.handleOverflow(this.overflowRows()[index].label),
-            onDismiss: () => this.go(this.selectedCountMirror > 0 ? 'trash_selection' : 'trash_populated') })
+            onDismiss: () => this.go(this.selectedCount > 0 ? 'trash_selection' : 'trash_populated') })
         }
         if (this.state === 'trash_context') {
           BottomSheet({ header: this.contextNote().title, rows: this.contextRows(),

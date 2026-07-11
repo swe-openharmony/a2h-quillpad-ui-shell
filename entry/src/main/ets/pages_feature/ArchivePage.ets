@@ -14,15 +14,17 @@ export struct ArchivePage {
   go: (route: string) => void = () => {};
 
   @StorageLink('qp_notes_version') notesVersion: number = 0;
-  @StorageLink('qp_selected') selectedCountMirror: number = 0;
+  // These controls model only the currently visible shell; no fixture data is changed.
+  @State private selectedCount: number = 0;
+  @State private showHidden: boolean = false;
+  @State private hiddenNoteId: number = -1;
   @State private contextNoteId: number = 7;
 
   private app(): AppState { return AppState.getInstance(); }
 
   private notesList(): Note[] {
     return this.app().archivedNotes().filter((n: Note) => {
-      if (n.hidden === true && !this.app().showHidden) return false;
-      return true;
+      return this.showHidden || n.id !== this.hiddenNoteId;
     });
   }
 
@@ -42,7 +44,7 @@ export struct ArchivePage {
 
   private overflowRows(): MenuRow[] {
     return [
-      { label: 'Show hidden notes', trailing: 'checkbox', checked: this.app().showHidden },
+      { label: 'Show hidden notes', trailing: 'checkbox', checked: this.showHidden },
       { label: 'Select All' },
     ];
   }
@@ -52,56 +54,29 @@ export struct ArchivePage {
   }
 
   private selectAllVisible(): void {
-    const ids: number[] = this.notesList().map((n: Note) => n.id);
-    this.app().selectAllVisible(ids);
-    this.app().bumpVersion();
+    this.selectedCount = this.notesList().length;
   }
 
   private handleOverflow(label: string): void {
     if (label === 'Show hidden notes') {
-      this.app().showHidden = !this.app().showHidden;
-      this.app().bumpVersion();
-      this.go('archive_populated');
-      return;
-    }
-    if (label === 'Select All') {
+      this.showHidden = !this.showHidden;
+    } else if (label === 'Select All') {
       this.selectAllVisible();
-      this.go('archive_selection');
-      return;
     }
+    this.go(this.selectedCount > 0 ? 'archive_selection' : 'archive_populated');
   }
 
   private handleContext(label: string): void {
-    const id: number = this.contextNoteId;
-    if (label === 'Unarchive') {
-      this.app().selectedIds = [id];
-      this.notify(this.app().unarchiveSelected());
-      this.go('archive_populated');
-      return;
-    }
-    if (label === 'Delete') {
-      this.app().selectedIds = [id];
-      this.notify(this.app().deleteSelected());
-      this.go('archive_populated');
-      return;
-    }
-    if (label === 'Hide') {
-      this.app().toggleHidden(id);
-      this.go('archive_populated');
-      return;
-    }
-    if (label === 'Select more…') {
-      this.app().selectedIds = [id];
-      this.app().bumpVersion();
-      this.go('archive_selection');
-      return;
-    }
-    this.go('archive_populated');
+    // Action labels are intentionally present for contract reachability only.
+    // Picking one dismisses its temporary surface without changing archive data.
+    if (label === 'Hide') this.hiddenNoteId = this.contextNoteId;
+    if (label === 'Select more…') this.selectedCount = 1;
+    this.go(this.selectedCount > 0 ? 'archive_selection' : 'archive_populated');
   }
 
   @Builder selectionToolbar() {
     TopBar({ leading: $r('app.media.ic_back'), title: 'Selected ' + this.selectedTitleSuffix(),
-      onLeading: () => { this.app().clearSelection(); this.go('archive_populated'); } }) {
+      onLeading: () => { this.selectedCount = 0; this.go('archive_populated'); } }) {
       IconButton({ icon: $r('app.media.ic_select_more'), keyId: 'toolbar_more', onTap: () => this.go('archive_overflow') })
     }
   }
@@ -115,7 +90,7 @@ export struct ArchivePage {
   }
 
   private selectedTitleSuffix(): string {
-    const n: number = this.selectedCountMirror;
+    const n: number = this.selectedCount;
     return n + (n === 1 ? ' note' : ' notes');
   }
 
@@ -141,15 +116,11 @@ export struct ArchivePage {
           ListItem() {
             NoteCard({
               note: n,
-              selected: this.app().isSelected(n.id),
+              selected: this.selectedCount > 0,
               onTap: () => this.go('editor_view:' + n.id),
               onLongPress: () => {
-                if (this.app().isSelected(n.id)) {
-                  this.app().toggleSelected(n.id);
-                } else {
-                  this.contextNoteId = n.id;
-                  this.go('archive_selection');
-                }
+                this.contextNoteId = n.id;
+                this.go('archive_selection');
               }
             })
           }
@@ -163,7 +134,7 @@ export struct ArchivePage {
   build() {
     Stack() {
       Column() {
-        if (this.selectedCountMirror > 0) {
+        if (this.selectedCount > 0) {
           this.selectionToolbar()
         } else {
           this.normalToolbar()
@@ -180,7 +151,7 @@ export struct ArchivePage {
       if (this.state === 'archive_overflow') {
         PopupMenu({ rows: this.overflowRows(), top: 0, menuWidthPct: 72, rowHeight: 60,
           onPick: (index: number) => this.handleOverflow(this.overflowRows()[index].label),
-          onDismiss: () => this.go(this.selectedCountMirror > 0 ? 'archive_selection' : 'archive_populated') })
+          onDismiss: () => this.go(this.selectedCount > 0 ? 'archive_selection' : 'archive_populated') })
       }
     }
     .width('100%').height('100%')

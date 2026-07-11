@@ -2,7 +2,7 @@ import { Style } from '../components/Style';
 import { TopBar, IconButton } from '../components/Common';
 import { PopupMenu, BottomSheet, MenuRow, InputDialogCard } from '../components/Overlays';
 import { TagItem, Note } from '../model/Data';
-import { AppState, SortKey, SortDir } from '../state/AppState';
+import { AppState } from '../state/AppState';
 import { promptAction } from '@kit.ArkUI';
 
 @Component
@@ -70,7 +70,7 @@ export struct TagsPage {
     TopBar({ leading: $r('app.media.ic_back'),
       title: this.isAssignment() ? 'Tags' : 'Tags',
       onLeading: () => this.isAssignment() ? this.go('editor_view:' + this.assignmentNoteId()) : this.go('drawer_nav') }) {
-      IconButton({ icon: $r('app.media.ic_sort'), onTap: () => this.go('tags_sort') })
+      IconButton({ icon: $r('app.media.ic_sort'), keyId: 'toolbar_sort', onTap: () => this.go('tags_sort') })
       IconButton({ icon: $r('app.media.ic_add'), keyId: 'toolbar_tag_add', onTap: () => {
         this.tagNameDraft = '';
         this.go('tag_create');
@@ -193,12 +193,8 @@ export struct TagsPage {
   }
 
   private applySort(index: number): void {
+    // Preserve the sort menu's selected indicator only; never reorder/mutate tags.
     this.sortIndex = index;
-    const keys: SortKey[] = [SortKey.Title, SortKey.Title, SortKey.Created, SortKey.Created];
-    const dirs: SortDir[] = [SortDir.Asc, SortDir.Desc, SortDir.Asc, SortDir.Desc];
-    this.app().prefs.tagSortBy = keys[index];
-    this.app().prefs.tagSortDir = dirs[index];
-    this.app().bumpVersion();
     this.go('tags_list');
   }
 
