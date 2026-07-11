@@ -1,0 +1,1168 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "Quillpad"
+    },
+    {
+      "name": "nav_notes",
+      "value": "Notes"
+    },
+    {
+      "name": "nav_archive",
+      "value": "Archive"
+    },
+    {
+      "name": "nav_deleted",
+      "value": "Deleted"
+    },
+    {
+      "name": "nav_settings",
+      "value": "Settings"
+    },
+    {
+      "name": "nav_about",
+      "value": "About"
+    },
+    {
+      "name": "nav_tags",
+      "value": "Tags"
+    },
+    {
+      "name": "nav_all_notes",
+      "value": "All Notes"
+    },
+    {
+      "name": "nav_notebooks",
+      "value": "Notebooks"
+    },
+    {
+      "name": "nav_your_notebooks",
+      "value": "Your Notebooks"
+    },
+    {
+      "name": "preferences_header_general",
+      "value": "General"
+    },
+    {
+      "name": "preferences_theme_mode",
+      "value": "Theme mode"
+    },
+    {
+      "name": "preferences_theme_mode_dark",
+      "value": "Dark"
+    },
+    {
+      "name": "preferences_theme_mode_light",
+      "value": "Light"
+    },
+    {
+      "name": "preferences_theme_mode_system",
+      "value": "Follow system"
+    },
+    {
+      "name": "preferences_dark_theme_mode",
+      "value": "Dark theme mode"
+    },
+    {
+      "name": "preferences_theme_dark_mode_standard",
+      "value": "Standard"
+    },
+    {
+      "name": "preferences_theme_dark_mode_black",
+      "value": "Black"
+    },
+    {
+      "name": "preferences_color_scheme",
+      "value": "Color scheme"
+    },
+    {
+      "name": "preferences_color_scheme_blue",
+      "value": "Blue"
+    },
+    {
+      "name": "preferences_color_scheme_pink",
+      "value": "Pink"
+    },
+    {
+      "name": "preferences_color_scheme_green",
+      "value": "Green"
+    },
+    {
+      "name": "preferences_color_scheme_orange",
+      "value": "Orange"
+    },
+    {
+      "name": "preferences_color_scheme_purple",
+      "value": "Purple"
+    },
+    {
+      "name": "preferences_color_scheme_yellow",
+      "value": "Yellow"
+    },
+    {
+      "name": "preferences_color_scheme_red",
+      "value": "Red"
+    },
+    {
+      "name": "preferences_color_scheme_teal",
+      "value": "Teal"
+    },
+    {
+      "name": "preferences_color_scheme_cyan",
+      "value": "Cyan"
+    },
+    {
+      "name": "preferences_color_scheme_brown",
+      "value": "Brown"
+    },
+    {
+      "name": "preferences_color_scheme_gray",
+      "value": "Gray"
+    },
+    {
+      "name": "preferences_color_scheme_system",
+      "value": "Follow system"
+    },
+    {
+      "name": "preferences_header_view",
+      "value": "View"
+    },
+    {
+      "name": "preferences_header_view_notebook",
+      "value": "Notebook"
+    },
+    {
+      "name": "preferences_layout_mode",
+      "value": "Layout mode"
+    },
+    {
+      "name": "preferences_layout_mode_grid",
+      "value": "Grid"
+    },
+    {
+      "name": "preferences_layout_mode_list",
+      "value": "List"
+    },
+    {
+      "name": "preferences_sort_method",
+      "value": "Sort by"
+    },
+    {
+      "name": "preferences_sort_method_title_asc",
+      "value": "Title (ascending)"
+    },
+    {
+      "name": "preferences_sort_method_title_desc",
+      "value": "Title (descending)"
+    },
+    {
+      "name": "preferences_sort_method_created_asc",
+      "value": "Date created (ascending)"
+    },
+    {
+      "name": "preferences_sort_method_created_desc",
+      "value": "Date created (descending)"
+    },
+    {
+      "name": "preferences_sort_method_modified_asc",
+      "value": "Date modified (ascending)"
+    },
+    {
+      "name": "preferences_sort_method_modified_desc",
+      "value": "Date modified (descending)"
+    },
+    {
+      "name": "preferences_header_view_note_content",
+      "value": "Note content"
+    },
+    {
+      "name": "preferences_font_size",
+      "value": "Text editor/view font size"
+    },
+    {
+      "name": "preferences_font_size_default",
+      "value": "Default"
+    },
+    {
+      "name": "preferences_font_size_ten",
+      "value": "10"
+    },
+    {
+      "name": "preferences_font_size_fifteen",
+      "value": "15"
+    },
+    {
+      "name": "preferences_font_size_twenty",
+      "value": "20"
+    },
+    {
+      "name": "preferences_font_size_twentyfive",
+      "value": "25"
+    },
+    {
+      "name": "preferences_font_size_thirty",
+      "value": "30"
+    },
+    {
+      "name": "preferences_font_size_thirtyfive",
+      "value": "35"
+    },
+    {
+      "name": "preferences_font_size_forty",
+      "value": "40"
+    },
+    {
+      "name": "preferences_font_size_fortyfive",
+      "value": "45"
+    },
+    {
+      "name": "preferences_font_size_fifty",
+      "value": "50"
+    },
+    {
+      "name": "preferences_show_fab_change_mode",
+      "value": "Edit/View note button position"
+    },
+    {
+      "name": "preferences_fab",
+      "value": "Floating button"
+    },
+    {
+      "name": "preferences_top_bar",
+      "value": "Top bar"
+    },
+    {
+      "name": "preferences_default_editor_mode",
+      "value": "Default editor mode"
+    },
+    {
+      "name": "preferences_default_editor_mode_view",
+      "value": "View mode"
+    },
+    {
+      "name": "preferences_default_editor_mode_edit",
+      "value": "Edit mode"
+    },
+    {
+      "name": "preferences_show_date",
+      "value": "Show date created/modified"
+    },
+    {
+      "name": "preferences_date_format",
+      "value": "Date format"
+    },
+    {
+      "name": "preferences_time_format",
+      "value": "Time format"
+    },
+    {
+      "name": "preferences_header_other",
+      "value": "Other"
+    },
+    {
+      "name": "preferences_open_media_in",
+      "value": "Open media in"
+    },
+    {
+      "name": "preferences_open_media_in_internal",
+      "value": "Internal player"
+    },
+    {
+      "name": "preferences_open_media_in_external",
+      "value": "External player"
+    },
+    {
+      "name": "preferences_group_notes_without_notebook",
+      "value": "Group notes which are not in any notebook"
+    },
+    {
+      "name": "preferences_move_checked_items",
+      "value": "Move (un)checked items in the lists"
+    },
+    {
+      "name": "preferences_note_deletion_time",
+      "value": "Delete notes in bin"
+    },
+    {
+      "name": "preferences_note_deletion_time_instantly",
+      "value": "Instantly"
+    },
+    {
+      "name": "preferences_note_deletion_time_week",
+      "value": "After 7 days"
+    },
+    {
+      "name": "preferences_note_deletion_time_two_weeks",
+      "value": "After 14 days"
+    },
+    {
+      "name": "preferences_note_deletion_time_month",
+      "value": "After 30 days"
+    },
+    {
+      "name": "preferences_header_backup",
+      "value": "Backup"
+    },
+    {
+      "name": "preferences_create_backup",
+      "value": "Create a backup"
+    },
+    {
+      "name": "preferences_create_backup_subtext",
+      "value": "Export all notes to a backup file."
+    },
+    {
+      "name": "preferences_restore",
+      "value": "Restore"
+    },
+    {
+      "name": "preferences_restore_subtext",
+      "value": "Load notes from a backup file."
+    },
+    {
+      "name": "preferences_backup_strategy",
+      "value": "Backup strategy for attachments"
+    },
+    {
+      "name": "preferences_backup_strategy_include_files",
+      "value": "Backup everything"
+    },
+    {
+      "name": "preferences_backup_strategy_keep_info",
+      "value": "Only backup description and local path"
+    },
+    {
+      "name": "preferences_backup_strategy_keep_nothing",
+      "value": "Do not backup attachments"
+    },
+    {
+      "name": "preferences_header_syncing",
+      "value": "Syncing"
+    },
+    {
+      "name": "preferences_go_to_sync_settings",
+      "value": "Go to sync settings"
+    },
+    {
+      "name": "preferences_currently_syncing_with",
+      "value": "Currently syncing with %s"
+    },
+    {
+      "name": "preferences_currently_not_syncing",
+      "value": "Currently not syncing"
+    },
+    {
+      "name": "preferences_cloud_service",
+      "value": "Syncing service"
+    },
+    {
+      "name": "preferences_cloud_service_disabled",
+      "value": "Disabled"
+    },
+    {
+      "name": "preferences_cloud_service_nextcloud",
+      "value": "Nextcloud"
+    },
+    {
+      "name": "preferences_nextcloud_limited_features",
+      "value": "Keep in mind Nextcloud Notes does not support features such as tags, attachments, reminders and more. Nextcloud Notes need to be installed on the Nextcloud Server or the Login will fail with \"Something went wrong\"!"
+    },
+    {
+      "name": "preferences_nextcloud_account",
+      "value": "Nextcloud account"
+    },
+    {
+      "name": "preferences_nextcloud_instance_url",
+      "value": "Nextcloud instance URL"
+    },
+    {
+      "name": "preferences_nextcloud_set_your_credentials",
+      "value": "Set your credentials"
+    },
+    {
+      "name": "preferences_nextcloud_set_server_url",
+      "value": "Set the server's URL"
+    },
+    {
+      "name": "preferences_file_storage_info",
+      "value": "Select a folder from local storage or from a cloud provider. All notes will be stored as Markdown files."
+    },
+    {
+      "name": "preferences_file_storage_location",
+      "value": "Storage location"
+    },
+    {
+      "name": "preferences_file_storage_select",
+      "value": "Select Storage location"
+    },
+    {
+      "name": "preferences_sync_on_wifi",
+      "value": "Wi-Fi"
+    },
+    {
+      "name": "preferences_sync_on_wifi_data",
+      "value": "Wi-Fi or Data"
+    },
+    {
+      "name": "preferences_sync_when_on",
+      "value": "Sync when on"
+    },
+    {
+      "name": "preferences_background_sync",
+      "value": "Background syncing"
+    },
+    {
+      "name": "preferences_background_sync_enabled",
+      "value": "Enabled"
+    },
+    {
+      "name": "preferences_background_sync_disabled",
+      "value": "Disabled"
+    },
+    {
+      "name": "preferences_new_notes_synchronizable",
+      "value": "New notes synchronizable"
+    },
+    {
+      "name": "preferences_trust_self_signed_certificate",
+      "value": "Trust self-signed certificate"
+    },
+    {
+      "name": "about_version",
+      "value": "Version"
+    },
+    {
+      "name": "about_website",
+      "value": "Website"
+    },
+    {
+      "name": "about_developer",
+      "value": "Developer"
+    },
+    {
+      "name": "about_contribute",
+      "value": "Contribute"
+    },
+    {
+      "name": "about_support",
+      "value": "Support"
+    },
+    {
+      "name": "about_send_logs",
+      "value": "Send Error Logs"
+    },
+    {
+      "name": "about_send_logs_subtext",
+      "value": "Send the application logs to the developer for investigation"
+    },
+    {
+      "name": "about_support_subtext",
+      "value": "Creating and maintaining open-source projects is time-consuming and provides\n        no profit.\nBuy the developers a coffee!\n    "
+    },
+    {
+      "name": "about_libraries",
+      "value": "Libraries"
+    },
+    {
+      "name": "about_libraries_subtext",
+      "value": "View third-party libraries and licenses."
+    },
+    {
+      "name": "default_string",
+      "value": "Default"
+    },
+    {
+      "name": "yes",
+      "value": "Yes"
+    },
+    {
+      "name": "no",
+      "value": "No"
+    },
+    {
+      "name": "ok",
+      "value": "Okay"
+    },
+    {
+      "name": "indicator_notes_empty",
+      "value": "Your notes will appear here."
+    },
+    {
+      "name": "indicator_untitled",
+      "value": "Untitled"
+    },
+    {
+      "name": "hint_username",
+      "value": "Username"
+    },
+    {
+      "name": "hint_password",
+      "value": "Password"
+    },
+    {
+      "name": "action_save",
+      "value": "Save"
+    },
+    {
+      "name": "action_cancel",
+      "value": "Cancel"
+    },
+    {
+      "name": "action_delete",
+      "value": "Delete"
+    },
+    {
+      "name": "action_done",
+      "value": "Done!"
+    },
+    {
+      "name": "action_delete_permanently",
+      "value": "Delete permanently"
+    },
+    {
+      "name": "action_select_all",
+      "value": "Select All"
+    },
+    {
+      "name": "action_create_list",
+      "value": "Create a list"
+    },
+    {
+      "name": "action_show_hidden_notes",
+      "value": "Show hidden notes"
+    },
+    {
+      "name": "action_unarchive",
+      "value": "Unarchive"
+    },
+    {
+      "name": "action_export",
+      "value": "Export"
+    },
+    {
+      "name": "action_hide",
+      "value": "Hide"
+    },
+    {
+      "name": "action_show",
+      "value": "Show"
+    },
+    {
+      "name": "action_archive",
+      "value": "Archive"
+    },
+    {
+      "name": "action_change_mode",
+      "value": "Edit/View mode"
+    },
+    {
+      "name": "action_pin",
+      "value": "Pin"
+    },
+    {
+      "name": "action_unpin",
+      "value": "Unpin"
+    },
+    {
+      "name": "action_restore",
+      "value": "Restore"
+    },
+    {
+      "name": "action_share",
+      "value": "Share"
+    },
+    {
+      "name": "action_pin_unpin",
+      "value": "Pin / Unpin"
+    },
+    {
+      "name": "action_move_to",
+      "value": "Move to…"
+    },
+    {
+      "name": "action_duplicate",
+      "value": "Duplicate"
+    },
+    {
+      "name": "action_select_more",
+      "value": "Select more…"
+    },
+    {
+      "name": "action_compact_preview",
+      "value": "Compact preview"
+    },
+    {
+      "name": "action_full_preview",
+      "value": "Full preview"
+    },
+    {
+      "name": "action_screen_always_on",
+      "value": "Screen always on"
+    },
+    {
+      "name": "attachments_edit_description",
+      "value": "Edit description"
+    },
+    {
+      "name": "attachments_hint_description",
+      "value": "Attachment description"
+    },
+    {
+      "name": "action_record_audio",
+      "value": "Record audio"
+    },
+    {
+      "name": "indicator_recording",
+      "value": "Recording (%1$s)"
+    },
+    {
+      "name": "action_attach_files",
+      "value": "Attach files"
+    },
+    {
+      "name": "action_take_photo",
+      "value": "Take a photo"
+    },
+    {
+      "name": "indicator_recorded_clip",
+      "value": "Recorded Clip"
+    },
+    {
+      "name": "default_notebook",
+      "value": "Other"
+    },
+    {
+      "name": "notebooks_new_notebook",
+      "value": "New notebook"
+    },
+    {
+      "name": "notebooks_hint_name",
+      "value": "Notebook name"
+    },
+    {
+      "name": "notebooks_unassigned",
+      "value": "No Notebook"
+    },
+    {
+      "name": "indicator_notebook_empty",
+      "value": "You have no notebooks."
+    },
+    {
+      "name": "action_create_notebook",
+      "value": "Create a notebook"
+    },
+    {
+      "name": "action_rename_notebook",
+      "value": "Rename notebook"
+    },
+    {
+      "name": "action_new_notebook",
+      "value": "New notebook"
+    },
+    {
+      "name": "indicator_notebook_already_exists",
+      "value": "Notebook with name %1$s already exists."
+    },
+    {
+      "name": "indicator_archive_empty",
+      "value": "Your archived notes will appear here."
+    },
+    {
+      "name": "action_empty_bin",
+      "value": "Empty bin"
+    },
+    {
+      "name": "empty_bin_warning_title",
+      "value": "Are you sure?"
+    },
+    {
+      "name": "empty_bin_warning_text",
+      "value": "All deleted notes will be lost."
+    },
+    {
+      "name": "indicator_deleted_note_cannot_be_edited",
+      "value": "Notes inside the bin cannot be edited."
+    },
+    {
+      "name": "indicator_deleted_empty",
+      "value": "Your deleted notes will appear here for %1$d days."
+    },
+    {
+      "name": "indicator_bin_disabled",
+      "value": "Notes are set to be deleted instantly.\nYou can change this at Settings."
+    },
+    {
+      "name": "indicator_bin_forever",
+      "value": "Notes are set to never be deleted.\nYou can change this at Settings."
+    },
+    {
+      "name": "indicator_deleted_notes_permanently",
+      "value": "Deleted notes permanently."
+    },
+    {
+      "name": "indicator_deleted_note_permanently",
+      "value": "Deleted note permanently."
+    },
+    {
+      "name": "reminders",
+      "value": "Reminders"
+    },
+    {
+      "name": "reminder",
+      "value": "Reminder"
+    },
+    {
+      "name": "reminders_hint_name",
+      "value": "Reminder name"
+    },
+    {
+      "name": "action_set_date",
+      "value": "Set date"
+    },
+    {
+      "name": "action_set_time",
+      "value": "Set time"
+    },
+    {
+      "name": "action_new_reminder",
+      "value": "New reminder"
+    },
+    {
+      "name": "notification_reminder_fired",
+      "value": "You have a reminder."
+    },
+    {
+      "name": "indicator_cannot_set_past_reminder",
+      "value": "Cannot set a reminder for a past date"
+    },
+    {
+      "name": "action_new_tag",
+      "value": "New tag"
+    },
+    {
+      "name": "tags_hint_name",
+      "value": "Tag name"
+    },
+    {
+      "name": "indicator_tags_empty",
+      "value": "You have no tags."
+    },
+    {
+      "name": "action_rename_tag",
+      "value": "Rename tag"
+    },
+    {
+      "name": "indicator_tag_already_exists",
+      "value": "Tag with name %1$s already exists."
+    },
+    {
+      "name": "search_hint",
+      "value": "Search…"
+    },
+    {
+      "name": "action_search",
+      "value": "Search"
+    },
+    {
+      "name": "indicator_search_empty",
+      "value": "Search results will be displayed here."
+    },
+    {
+      "name": "indicator_no_results_found",
+      "value": "No results found."
+    },
+    {
+      "name": "editor_hint_title",
+      "value": "Title"
+    },
+    {
+      "name": "editor_hint_content",
+      "value": "Take a note!"
+    },
+    {
+      "name": "action_add_task",
+      "value": "Task"
+    },
+    {
+      "name": "action_convert_to_note",
+      "value": "Convert to note"
+    },
+    {
+      "name": "action_convert_to_list",
+      "value": "Convert to list"
+    },
+    {
+      "name": "action_do_not_sync",
+      "value": "Do not sync"
+    },
+    {
+      "name": "action_change_color",
+      "value": "Change color"
+    },
+    {
+      "name": "action_enable_markdown",
+      "value": "Enable markdown"
+    },
+    {
+      "name": "action_disable_markdown",
+      "value": "Disable markdown"
+    },
+    {
+      "name": "action_enable_screen_always_on",
+      "value": "Enable screen always on"
+    },
+    {
+      "name": "action_disable_screen_always_on",
+      "value": "Disable screen always on"
+    },
+    {
+      "name": "action_insert_bold_text",
+      "value": "Insert bold markdown"
+    },
+    {
+      "name": "action_insert_italics",
+      "value": "Insert italics markdown"
+    },
+    {
+      "name": "action_insert_strikethrough",
+      "value": "Insert strikethrough markdown"
+    },
+    {
+      "name": "action_insert_highlight",
+      "value": "Insert highlight markdown"
+    },
+    {
+      "name": "action_insert_heading",
+      "value": "Insert heading markdown"
+    },
+    {
+      "name": "action_insert_quote",
+      "value": "Insert quotation markdown"
+    },
+    {
+      "name": "action_insert_code",
+      "value": "Insert code markdown"
+    },
+    {
+      "name": "action_uncheck_all_tasks",
+      "value": "Uncheck all items"
+    },
+    {
+      "name": "action_remove_all_checked_tasks",
+      "value": "Remove all checked tasks"
+    },
+    {
+      "name": "indicator_note_date",
+      "value": "Created at %1$s\nLast modified at %2$s"
+    },
+    {
+      "name": "indicator_restored_notes",
+      "value": "Restored notes"
+    },
+    {
+      "name": "indicator_restored_note",
+      "value": "Restored note"
+    },
+    {
+      "name": "indicator_archived_notes",
+      "value": "Archived notes"
+    },
+    {
+      "name": "indicator_archive_note",
+      "value": "Archived note"
+    },
+    {
+      "name": "indicator_moved_notes_to_bin",
+      "value": "Moved notes to bin"
+    },
+    {
+      "name": "indicator_moved_note_to_bin",
+      "value": "Moved note to bin"
+    },
+    {
+      "name": "indicator_empty_note_discarded",
+      "value": "Empty note discarded"
+    },
+    {
+      "name": "action_insert_link",
+      "value": "Insert link"
+    },
+    {
+      "name": "action_insert",
+      "value": "Insert"
+    },
+    {
+      "name": "action_insert_table",
+      "value": "Insert table"
+    },
+    {
+      "name": "message_invalid_number_rows_columns",
+      "value": "Invalid number of rows and columns"
+    },
+    {
+      "name": "action_insert_image",
+      "value": "Insert image"
+    },
+    {
+      "name": "hint_image_description",
+      "value": "Description"
+    },
+    {
+      "name": "hint_image_path",
+      "value": "Image path"
+    },
+    {
+      "name": "hint_hyperlink_text",
+      "value": "Text"
+    },
+    {
+      "name": "hint_hyperlink_url",
+      "value": "URL"
+    },
+    {
+      "name": "hint_number_columns",
+      "value": "Number of columns"
+    },
+    {
+      "name": "hint_number_rows",
+      "value": "Number of rows"
+    },
+    {
+      "name": "message_cannot_preview_table",
+      "value": "Cannot preview table."
+    },
+    {
+      "name": "notification_backing_up",
+      "value": "Backing up your notes…"
+    },
+    {
+      "name": "notification_backup_complete",
+      "value": "Backup complete!"
+    },
+    {
+      "name": "notification_backup_failed",
+      "value": "Backup failed"
+    },
+    {
+      "name": "notification_restoring_notes",
+      "value": "Restoring your notes…"
+    },
+    {
+      "name": "notification_restore_complete",
+      "value": "Restore completed"
+    },
+    {
+      "name": "notification_restore_failed",
+      "value": "Restore failed"
+    },
+    {
+      "name": "notifications_channel_reminders",
+      "value": "Reminders"
+    },
+    {
+      "name": "notifications_channel_backups",
+      "value": "Backups"
+    },
+    {
+      "name": "notifications_channel_playback",
+      "value": "Media playback"
+    },
+    {
+      "name": "message_not_valid_https",
+      "value": "This is not a valid HTTPS url."
+    },
+    {
+      "name": "indicator_nextcloud_currently_logged_in_as",
+      "value": "You are currently logged in as %s."
+    },
+    {
+      "name": "indicator_nextcloud_currently_not_logged_in",
+      "value": "You are currently not logged in."
+    },
+    {
+      "name": "action_nextcloud_authenticate",
+      "value": "Authenticate"
+    },
+    {
+      "name": "indicator_offline_account",
+      "value": "Offline account"
+    },
+    {
+      "name": "indicator_connecting",
+      "value": "Connecting…"
+    },
+    {
+      "name": "message_something_went_wrong",
+      "value": "Something went wrong."
+    },
+    {
+      "name": "message_invalid_credentials",
+      "value": "Could not authenticate with server due to invalid credentials."
+    },
+    {
+      "name": "message_certificates_invalid",
+      "value": "Certificate error. Please enable \"Trust self-signed certificate\" to continue..\n    "
+    },
+    {
+      "name": "message_logged_in_successfully",
+      "value": "Logged in successfully!"
+    },
+    {
+      "name": "message_notes_not_installed",
+      "value": "Notes app is not installed in your Nextcloud."
+    },
+    {
+      "name": "message_server_not_compatible",
+      "value": "Server version is not compatible with this app."
+    },
+    {
+      "name": "message_internet_not_available",
+      "value": "Internet connection is not available."
+    },
+    {
+      "name": "message_credentials_cannot_be_blank",
+      "value": "Credentials cannot be blank."
+    },
+    {
+      "name": "preference_nextcloud_clear_credentials",
+      "value": "Clear credentials and server URL"
+    },
+    {
+      "name": "notification_media_play_pause",
+      "value": "Play / Pause"
+    },
+    {
+      "name": "notification_media_stop",
+      "value": "Stop"
+    },
+    {
+      "name": "shortcut_take_note",
+      "value": "Take a note"
+    },
+    {
+      "name": "shortcut_make_list",
+      "value": "Make a list"
+    },
+    {
+      "name": "never",
+      "value": "Never"
+    },
+    {
+      "name": "preferences_header_view_tags",
+      "value": "Tag list"
+    },
+    {
+      "name": "preferences_sort_tags_method",
+      "value": "Sort tags by"
+    },
+    {
+      "name": "preferences_header_view_navdrawer",
+      "value": "Navigation drawer"
+    },
+    {
+      "name": "preferences_sort_navdrawer_method",
+      "value": "Sort notebooks by"
+    },
+    {
+      "name": "continue_next",
+      "value": "Continue"
+    },
+    {
+      "name": "preferences_cloud_service_files",
+      "value": "File Storage"
+    },
+    {
+      "name": "error_report_email",
+      "value": "sixface@msn.com"
+    },
+    {
+      "name": "widget_description",
+      "value": "Show your recent notes on home screen"
+    },
+    {
+      "name": "action_new_note",
+      "value": "New Note"
+    },
+    {
+      "name": "note_untitled",
+      "value": "Untitled"
+    },
+    {
+      "name": "tasks",
+      "value": "tasks"
+    },
+    {
+      "name": "widget_no_pinned_notes",
+      "value": "No pinned notes yet. Pin a note to see it here."
+    },
+    {
+      "name": "app_name",
+      "value": "Quillpad"
+    },
+    {
+      "name": "app_website",
+      "value": "https://quillpad.github.io"
+    },
+    {
+      "name": "app_developer_name",
+      "value": "Arumugam J, Michael Soultanidis & Open Source Devs\n    "
+    },
+    {
+      "name": "app_developer_repo",
+      "value": "https://github.com/quillpad/quillpad/graphs/contributors\n    "
+    },
+    {
+      "name": "app_repo",
+      "value": "https://github.com/quillpad/quillpad"
+    },
+    {
+      "name": "app_support_page",
+      "value": "https://buymeacoffee.com/quillpad"
+    },
+    {
+      "name": "hint_nextcloud_url",
+      "value": "https://…"
+    },
+    {
+      "name": "licenses_markdown_text",
+      "value": "\n        **Markwon** by Dimitry Ivanov, licensed under Apache License 2.0\n\n\n        ```\n  Copyright 2019 Dimitry Ivanov (legal@noties.io)\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n      http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n```\n\n\n        **PhotoView** by Chris Banes, licensed under Apache License 2.0\n\n\n        ```\nCopyright 2018 Chris Banes\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n   http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n```\n\n        **Retrofit** by Square Inc. licensed under Apache License 2.0\n\n\n        ```\nCopyright 2013 Square, Inc.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n   http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n```\n\n        **LeakCanary** by Square Inc. licensed under Apache License 2.0\n\n\n        ```\nCopyright 2015 Square, Inc.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n   http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n```\n\n\n        **Coil** by Coil Contributors, licensed under Apache License 2.0\n\n\n        ```\nCopyright 2021 Coil Contributors\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n   https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n```\n\n\n        **Flow Preferences** by Fred Porciúncula, licensed under Apache License 2.0\n\n\n        ```\nCopyright 2021 Coil Contributors\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n   https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n```\n\n\n        **ExoPlayer** by Google, licensed under Apache License 2.0\n\n\n        ```\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n```\n\n\n        **Dagger** by The Dagger Authors licensed under Apache License 2.0\n\n\n        ```\nCopyright 2012 The Dagger Authors\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n   http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n```\n\n        **Material Design Icons** by Google and Austin Andrews' Material Design Icons licensed under Apache License 2.0\n\n\n        ```\nCopyright 2021 Google & Austin Andrews\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n```\n\n\n\n    "
+    },
+    {
+      "name": "MMMM_d_yyyy",
+      "value": "MMMM d yyyy"
+    },
+    {
+      "name": "d_MMMM_yyyy",
+      "value": "d MMMM yyyy"
+    },
+    {
+      "name": "MM_d_yyyy",
+      "value": "MM/d/yyyy"
+    },
+    {
+      "name": "d_MM_yyyy",
+      "value": "d/MM/yyyy"
+    },
+    {
+      "name": "yyyy_MM_dd",
+      "value": "yyyy-MM-dd"
+    },
+    {
+      "name": "HH_mm",
+      "value": "HH:mm"
+    },
+    {
+      "name": "hh_mm",
+      "value": "hh:mm a"
+    }
+  ]
+}

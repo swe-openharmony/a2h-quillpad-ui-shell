@@ -1,0 +1,194 @@
+import { TopBar, IconButton } from '../components/Common';
+import { NoteCard } from '../components/NoteCard';
+import { BottomSheet, PopupMenu, MenuRow } from '../components/Overlays';
+import { Note } from '../model/Data';
+import { AppState } from '../state/AppState';
+import { promptAction } from '@kit.ArkUI';
+
+// Archive feature area. Covers states:
+// archive_populated, archive_selection (per-note context BottomSheet),
+// archive_overflow, archive_sort, archive_move_dialog.
+@Component
+export struct ArchivePage {
+  @Prop state: string;
+  go: (route: string) => void = () => {};
+
+  @StorageLink('qp_notes_version') notesVersion: number = 0;
+  @StorageLink('qp_selected') selectedCountMirror: number = 0;
+  @State private contextNoteId: number = 7;
+
+  private app(): AppState { return AppState.getInstance(); }
+
+  private notesList(): Note[] {
+    return this.app().archivedNotes().filter((n: Note) => {
+      if (n.hidden === true && !this.app().showHidden) return false;
+      return true;
+    });
+  }
+
+  private contextRows(): MenuRow[] {
+    return [
+      { label: 'Unarchive', icon: $r('app.media.ic_unarchive') },
+      { label: 'Delete', icon: $r('app.media.ic_bin') },
+      { label: 'Hide', icon: $r('app.media.ic_hidden') },
+      { label: 'Compact preview', icon: $r('app.media.ic_preview') },
+      { label: 'Enable screen always on', icon: $r('app.media.ic_pin') },
+      { label: 'Enable markdown', icon: $r('app.media.ic_markdown') },
+      { label: 'Export', icon: $r('app.media.ic_export_note') },
+      { label: 'Share', icon: $r('app.media.ic_share') },
+      { label: 'Select more…', icon: $r('app.media.ic_select_more') },
+    ];
+  }
+
+  private overflowRows(): MenuRow[] {
+    return [
+      { label: 'Show hidden notes', trailing: 'checkbox', checked: this.app().showHidden },
+      { label: 'Select All' },
+    ];
+  }
+
+  private notify(msg: string): void {
+    try { promptAction.showToast({ message: msg, duration: 1500 }); } catch (e) {}
+  }
+
+  private selectAllVisible(): void {
+    const ids: number[] = this.notesList().map((n: Note) => n.id);
+    this.app().selectAllVisible(ids);
+    this.app().bumpVersion();
+  }
+
+  private handleOverflow(label: string): void {
+    if (label === 'Show hidden notes') {
+      this.app().showHidden = !this.app().showHidden;
+      this.app().bumpVersion();
+      this.go('archive_populated');
+      return;
+    }
+    if (label === 'Select All') {
+      this.selectAllVisible();
+      this.go('archive_selection');
+      return;
+    }
+  }
+
+  private handleContext(label: string): void {
+    const id: number = this.contextNoteId;
+    if (label === 'Unarchive') {
+      this.app().selectedIds = [id];
+      this.notify(this.app().unarchiveSelected());
+      this.go('archive_populated');
+      return;
+    }
+    if (label === 'Delete') {
+      this.app().selectedIds = [id];
+      this.notify(this.app().deleteSelected());
+      this.go('archive_populated');
+      return;
+    }
+    if (label === 'Hide') {
+      this.app().toggleHidden(id);
+      this.go('archive_populated');
+      return;
+    }
+    if (label === 'Select more…') {
+      this.app().selectedIds = [id];
+      this.app().bumpVersion();
+      this.go('archive_selection');
+      return;
+    }
+    this.go('archive_populated');
+  }
+
+  @Builder selectionToolbar() {
+    TopBar({ leading: $r('app.media.ic_back'), title: 'Selected ' + this.selectedTitleSuffix(),
+      onLeading: () => { this.app().clearSelection(); this.go('archive_populated'); } }) {
+      IconButton({ icon: $r('app.media.ic_select_more'), keyId: 'toolbar_more', onTap: () => this.go('archive_overflow') })
+    }
+  }
+
+  @Builder normalToolbar() {
+    TopBar({ leading: $r('app.media.ic_notes'), title: 'Archive',
+      onLeading: () => this.go('drawer_nav') }) {
+      IconButton({ icon: $r('app.media.ic_search'), keyId: 'toolbar_search', onTap: () => this.go('search_initial') })
+      IconButton({ icon: $r('app.media.ic_select_more'), keyId: 'toolbar_more', onTap: () => this.go('archive_overflow') })
+    }
+  }
+
+  private selectedTitleSuffix(): string {
+    const n: number = this.selectedCountMirror;
+    return n + (n === 1 ? ' note' : ' notes');
+  }
+
+  @Builder emptyState() {
+    Column() {
+      Image($r('app.media.ic_archive'))
+        .width(96).height(96).fillColor('#CCCCCC')
+      Text('Archived notes will appear here.')
+        .fontSize(16).fontColor('#888888')
+        .margin({ top: 20 })
+    }
+    .width('100%').layoutWeight(1)
+    .justifyContent(FlexAlign.Center)
+    .alignItems(HorizontalAlign.Center)
+  }
+
+  @Builder list() {
+    if (this.notesList().length === 0) {
+      this.emptyState()
+    } else {
+      List({ space: 12 }) {
+        ForEach(this.notesList(), (n: Note) => {
+          ListItem() {
+            NoteCard({
+              note: n,
+              selected: this.app().isSelected(n.id),
+              onTap: () => this.go('editor_view:' + n.id),
+              onLongPress: () => {
+                if (this.app().isSelected(n.id)) {
+                  this.app().toggleSelected(n.id);
+                } else {
+                  this.contextNoteId = n.id;
+                  this.go('archive_selection');
+                }
+              }
+            })
+          }
+          .key('archive_card_' + n.id)
+        }, (n: Note) => 'a' + n.id + '_' + this.notesVersion)
+      }
+      .layoutWeight(1).padding(12)
+    }
+  }
+
+  build() {
+    Stack() {
+      Column() {
+        if (this.selectedCountMirror > 0) {
+          this.selectionToolbar()
+        } else {
+          this.normalToolbar()
+        }
+        this.list()
+      }
+      .width('100%').height('100%')
+
+      if (this.state === 'archive_selection') {
+        BottomSheet({ header: this.contextHeader(), rows: this.contextRows(),
+          onPick: (index: number) => this.handleContext(this.contextRows()[index].label),
+          onDismiss: () => this.go('archive_populated') })
+      }
+      if (this.state === 'archive_overflow') {
+        PopupMenu({ rows: this.overflowRows(), top: 0, menuWidthPct: 72, rowHeight: 60,
+          onPick: (index: number) => this.handleOverflow(this.overflowRows()[index].label),
+          onDismiss: () => this.go(this.selectedCountMirror > 0 ? 'archive_selection' : 'archive_populated') })
+      }
+    }
+    .width('100%').height('100%')
+    .backgroundColor('#FFFFFF')
+  }
+
+  private contextHeader(): string {
+    const n: Note | null = this.app().noteById(this.contextNoteId);
+    return n === null ? '' : (n as Note).title;
+  }
+}

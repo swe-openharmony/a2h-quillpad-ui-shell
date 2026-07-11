@@ -1,0 +1,140 @@
+{
+  "color": [
+    {
+      "name": "start_window_background",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "navBarDark",
+      "value": "#ff202020"
+    },
+    {
+      "name": "navBarLight",
+      "value": "#ffF5F5F5"
+    },
+    {
+      "name": "navBarBlack",
+      "value": "#ff121212"
+    },
+    {
+      "name": "colorBackground",
+      "value": "#ff000000"
+    },
+    {
+      "name": "colorBottomAppBarBackground",
+      "value": "#ff121212"
+    },
+    {
+      "name": "colorDrawerBackground",
+      "value": "#ff191919"
+    },
+    {
+      "name": "colorNoteText",
+      "value": "#ff000000"
+    },
+    {
+      "name": "colorNoteIndicator",
+      "value": "#B3000000"
+    },
+    {
+      "name": "colorTaskDone",
+      "value": "#80000000"
+    },
+    {
+      "name": "colorMarkdownTask",
+      "value": "#80000000"
+    },
+    {
+      "name": "colorTaskSwipe",
+      "value": "#CCF44336"
+    },
+    {
+      "name": "colorHighlightMask",
+      "value": "#1F000000"
+    },
+    {
+      "name": "colorNoteDefault",
+      "value": "#ff000000"
+    },
+    {
+      "name": "colorNoteRed",
+      "value": "#ffEF9A9A"
+    },
+    {
+      "name": "colorNoteOrange",
+      "value": "#ffF29F75"
+    },
+    {
+      "name": "colorNoteYellow",
+      "value": "#ffFFF59D"
+    },
+    {
+      "name": "colorNoteGreen",
+      "value": "#ffC5E1A5"
+    },
+    {
+      "name": "colorNoteTeal",
+      "value": "#ffB4DED3"
+    },
+    {
+      "name": "colorNoteCyan",
+      "value": "#ffA5DCEB"
+    },
+    {
+      "name": "colorNoteBlue",
+      "value": "#ffAACCF5"
+    },
+    {
+      "name": "colorNotePurple",
+      "value": "#ffC8AED2"
+    },
+    {
+      "name": "colorNotePink",
+      "value": "#ffFAAFC8"
+    },
+    {
+      "name": "colorNoteBrown",
+      "value": "#ffD2C3B4"
+    },
+    {
+      "name": "colorNoteGray",
+      "value": "#ffC8C8D2"
+    },
+    {
+      "name": "colorNoteTextHighlight",
+      "value": "#96FFFF00"
+    },
+    {
+      "name": "colorSurface",
+      "value": "#ff1B1B1B"
+    },
+    {
+      "name": "accentBlue",
+      "value": "#ff2196F3"
+    },
+    {
+      "name": "accentRed",
+      "value": "#ffEB4132"
+    },
+    {
+      "name": "accentYellow",
+      "value": "#ffFFBA00"
+    },
+    {
+      "name": "accentGreen",
+      "value": "#ff7CB342"
+    },
+    {
+      "name": "accentPink",
+      "value": "#ffC2185B"
+    },
+    {
+      "name": "accentOrange",
+      "value": "#ffFF8800"
+    },
+    {
+      "name": "accentPurple",
+      "value": "#ff8249E8"
+    }
+  ]
+}

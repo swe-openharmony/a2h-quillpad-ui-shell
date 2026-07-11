@@ -1,0 +1,28 @@
+{
+  "float": [
+    {
+      "name": "page_text_font_size",
+      "value": "50fp"
+    },
+    {
+      "name": "recycler_padding",
+      "value": "8vp"
+    },
+    {
+      "name": "card_note_padding",
+      "value": "12vp"
+    },
+    {
+      "name": "card_note_icon_size",
+      "value": "16vp"
+    },
+    {
+      "name": "icon_indicator_empty_size",
+      "value": "96vp"
+    },
+    {
+      "name": "app_bar_elevation",
+      "value": "8vp"
+    }
+  ]
+}

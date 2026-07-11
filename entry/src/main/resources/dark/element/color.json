@@ -1,0 +1,116 @@
+{
+  "color": [
+    {
+      "name": "start_window_background",
+      "value": "#000000"
+    },
+    {
+      "name": "colorBackground",
+      "value": "#ff121212"
+    },
+    {
+      "name": "colorBottomAppBarBackground",
+      "value": "#ff202020"
+    },
+    {
+      "name": "colorDrawerBackground",
+      "value": "#ff202020"
+    },
+    {
+      "name": "colorNoteText",
+      "value": "#ffFFFFFF"
+    },
+    {
+      "name": "colorNoteIndicator",
+      "value": "#B3FFFFFF"
+    },
+    {
+      "name": "colorTaskDone",
+      "value": "#80FFFFFF"
+    },
+    {
+      "name": "colorMarkdownTask",
+      "value": "#80FFFFFF"
+    },
+    {
+      "name": "colorNoteDefault",
+      "value": "#ff1C1C1C"
+    },
+    {
+      "name": "colorNoteRed",
+      "value": "#ff761725"
+    },
+    {
+      "name": "colorNoteOrange",
+      "value": "#ff693A1C"
+    },
+    {
+      "name": "colorNoteYellow",
+      "value": "#ff7C5603"
+    },
+    {
+      "name": "colorNoteGreen",
+      "value": "#ff264D3B"
+    },
+    {
+      "name": "colorNoteTeal",
+      "value": "#ff0C635D"
+    },
+    {
+      "name": "colorNoteCyan",
+      "value": "#ff2B7489"
+    },
+    {
+      "name": "colorNoteBlue",
+      "value": "#ff274255"
+    },
+    {
+      "name": "colorNotePurple",
+      "value": "#ff482E5B"
+    },
+    {
+      "name": "colorNotePink",
+      "value": "#ff6D394F"
+    },
+    {
+      "name": "colorNoteBrown",
+      "value": "#ff4B443A"
+    },
+    {
+      "name": "colorNoteGray",
+      "value": "#ff383A41"
+    },
+    {
+      "name": "colorNoteTextHighlight",
+      "value": "#96FFFF00"
+    },
+    {
+      "name": "accentBlue",
+      "value": "#ff90CAF9"
+    },
+    {
+      "name": "accentRed",
+      "value": "#ffEE6E63"
+    },
+    {
+      "name": "accentYellow",
+      "value": "#ffFCCF4F"
+    },
+    {
+      "name": "accentGreen",
+      "value": "#ffC5E1A5"
+    },
+    {
+      "name": "accentPink",
+      "value": "#ffF48FB1"
+    },
+    {
+      "name": "accentOrange",
+      "value": "#ffFFCC80"
+    },
+    {
+      "name": "accentPurple",
+      "value": "#ffB39DDB"
+    }
+  ]
+}
